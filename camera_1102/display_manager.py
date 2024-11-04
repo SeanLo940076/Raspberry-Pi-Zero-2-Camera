@@ -61,21 +61,9 @@ class DisplayManager:
             # 左下角顯示狀態 (state_text 比如顯示 "預覽", "拍照", "相簿")
             cv2.putText(processed_image, state_text, (10, target_height - 10), font, 0.6, font_color, thickness)
 
-            # 電池顯示區域
-            battery_x = target_width - 100
-            battery_y = target_height - 30
-            battery_width = 80
-            battery_height = 20
-
-            # 畫出空的電池框架
-            cv2.rectangle(processed_image, (battery_x, battery_y), (battery_x + battery_width, battery_y + battery_height), (255, 255, 255), 2)
-
+            # 顯示電池狀態欄
             if battery_percentage is not None:
-                # 根據電池百分比畫出進度條
-                filled_width = int(battery_percentage / 100 * battery_width)
-                filled_color = (0, 255, 0) if battery_percentage > 20 else (0, 0, 255)
-                cv2.rectangle(processed_image, (battery_x, battery_y), (battery_x + filled_width, battery_y + battery_height), filled_color, -1)
-
+                self.draw_battery(processed_image, battery_percentage, target_width, target_height)
 
             # 顯示最終處理的圖像
             self.disp.ShowImage_CV(processed_image)
@@ -83,22 +71,40 @@ class DisplayManager:
         except Exception as e:
             logging.error(f"Failed to display image: {e}")
 
-    def get_battery_symbol(self, percentage):
+    def draw_battery(self, canvas, battery_percentage, target_width, target_height):
         """
-        根據電池百分比返回相應的電量符號。
+        通用的電池顯示邏輯。根據 battery_percentage 決定顏色
+        60% 以下將設為黃色，20% 以下為紅色，其他情況為綠色。
         """
-        if percentage <= 5:
-            return "[     ]"   # 電量 0%    
-        elif percentage <= 20:
-            return "[■    ]"   # 電量 20%
-        elif percentage <= 40:
-            return "[■■   ]"   # 電量 40%
-        elif percentage <= 60:
-            return "[■■■  ]"   # 電量 60%
-        elif percentage <= 80:
-            return "[■■■■ ]"   # 電量 80%
+        # 電池圖形顯示區域，右下角
+        battery_x = target_width - 100
+        battery_y = target_height - 30
+        battery_width = 80
+        battery_height = 20
+
+        # 畫出空的電池框架
+        cv2.rectangle(canvas, (battery_x, battery_y), (battery_x + battery_width, battery_y + battery_height), (255, 255, 255), 2)
+
+        # 根據電池百分比填充狀態條
+        filled_width = int(battery_percentage / 100 * battery_width)
+
+        # 根據不同電量設置不同顏色：
+        if battery_percentage > 60:
+            filled_color = (0, 255, 0)   # 綠色，表示充足
+        elif battery_percentage > 20:
+            filled_color = (255, 255, 0) # 黃色，表示電量較低
         else:
-            return "[■■■■■]"   # 電量 100%
+            filled_color = (255, 0, 0)   # 紅色，表示電量非常低
+
+        # 繪製完成的電池狀態條
+        cv2.rectangle(canvas, (battery_x, battery_y), (battery_x + filled_width, battery_y + battery_height), filled_color, -1)
+
+    def display_battery(self, canvas, battery_percentage):
+        """
+        單純顯示電池圖示。
+        """
+        self.draw_battery(canvas, battery_percentage, self.disp.width, self.disp.height)
+        return canvas
 
     def clear_display(self):
         self.disp.clear()

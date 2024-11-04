@@ -6,6 +6,7 @@ from camera_manager import CameraManager
 from key_manager import KeyManager
 from display_manager import DisplayManager
 from state_machine import StateMachine
+from battery_manager import BatteryManager
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -13,9 +14,13 @@ if __name__ == "__main__":
     # 初始化顯示器
     disp_mgr = DisplayManager()
     if disp_mgr.disp:
-        cam_mgr = CameraManager()
+        # 初始化電池管理器
+        battery_mgr = BatteryManager(update_interval=60)
+
+        # 初始化相機管理器
+        cam_mgr = CameraManager(disp_mgr)
+
         if cam_mgr.initialize_camera():
-            # 初始化按鍵管理器
             key_mgr = KeyManager(disp_mgr.disp)
 
             # 創建目錄來保存照片
@@ -23,7 +28,7 @@ if __name__ == "__main__":
             os.makedirs(save_dir, exist_ok=True)
 
             # 初始化狀態機
-            state_machine = StateMachine(disp_mgr, cam_mgr, key_mgr, save_dir)
+            state_machine = StateMachine(disp_mgr, cam_mgr, key_mgr, battery_mgr, save_dir)
 
             # 主循環 - 使用狀態機來處理相機流程
             try:
