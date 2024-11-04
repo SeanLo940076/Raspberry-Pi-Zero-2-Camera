@@ -17,7 +17,7 @@ class KeyManager:
             disp.GPIO_KEY_RIGHT_PIN: 0,
         }
 
-    def check_key_pressed(self, key_pin, debounce_delay=0.15):
+    def check_key_pressed(self, key_pin, debounce_delay=0.2):
         """
         檢查指定的 GPIO pin 是否已被按下，並進行防抖處理。
         """
