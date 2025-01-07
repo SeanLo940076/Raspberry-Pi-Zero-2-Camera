@@ -23,8 +23,10 @@ if __name__ == "__main__":
         if cam_mgr.initialize_camera():
             key_mgr = KeyManager(disp_mgr.disp)
 
-            # 創建目錄來保存照片
-            save_dir = "/home/SeanPi-2w/camera_1102/photo/"
+            # 使用當前使用者的家目錄作為基礎
+            home_dir = os.path.expanduser("~")
+            # 建立儲存影像的路徑
+            save_dir = os.path.join(home_dir, "photo")
             os.makedirs(save_dir, exist_ok=True)
 
             # 初始化狀態機
