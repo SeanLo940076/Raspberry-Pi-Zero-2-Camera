@@ -178,9 +178,9 @@ class StateMachine:
             # 使用後台線程保存圖片以避免阻塞主線程
             def save_image_in_background(image, image_index):
                 """於後台線程中保存圖片"""
-                thumbnail_path = os.path.join(self.thumbnail_dir, os.path.basename(image_path))
                 current_time = time.strftime("%Y%m%d_%H%M%S")
                 image_path = os.path.join(self.save_dir, f"{current_time}.jpg")
+                thumbnail_path = os.path.join(self.thumbnail_dir, os.path.basename(image_path))
                 logging.info(f"保存圖片中... {image_path}")
                 # 保存圖片
                 cv2.imwrite(image_path, image)
