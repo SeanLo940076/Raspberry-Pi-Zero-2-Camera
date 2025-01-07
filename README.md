@@ -7,7 +7,7 @@
 
 ---
 
-### 簡要特色 (Features)
+### 簡要特色
 
 - **超小體積**：以 Raspberry Pi Zero 2 為核心，方便攜帶與應用。
 - **自動對焦**：採用 Raspberry Pi Camera Module 3，支援 AutoFocus 功能，可取得更清晰的影像。
@@ -43,7 +43,7 @@
 
 ---
 
-### 組裝步驟 (Assembly Steps)
+### 組裝步驟
 
 1. **疊加 LCD HAT**
    - 先將 **Waveshare 1.3inch LCD HAT** 與 **Pi Zero 2** 疊合，確保 40-pin 接腳對應正確，並在四角鎖上 M2.5 螺絲。  
@@ -64,7 +64,7 @@
 
 ---
 
-### 安裝 / 使用範例 (Installation / Usage Examples)
+### 安裝 / 使用範例
 
 以下以 **Raspberry Pi Lite OS** 為例，示範基礎安裝與拍攝操作：
 
