@@ -49,7 +49,7 @@ class CameraManager:
             return False
 
     def capture_high_res_image_to_memory(self):
-        time.sleep(0.25) # 幫助手穩定，因為按下按鈕的瞬間相機會晃動，但我不確定這有沒有用
+        time.sleep(0.2) # 幫助手穩定，因為按下按鈕的瞬間相機會晃動，但我不確定這有沒有用
 
         logging.info("開始高分辨率拍攝...")
         high_res_image = None
@@ -78,7 +78,7 @@ class CameraManager:
             logging.info("顯示黑色畫面...")
             self.display_mgr.disp.ShowImage_CV(self.black_image)  # 顯示黑色畫面
             # 等待相機自動對焦與曝光同時快速閃黑色畫面
-            time.sleep(0.8)
+            time.sleep(0.6)
 
         except Exception as e:
             logging.error(f"設置自動對焦和曝光失敗: {str(e)}")
