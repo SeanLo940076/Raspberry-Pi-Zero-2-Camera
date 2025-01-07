@@ -21,7 +21,7 @@
    - [Raspberry Pi Camera Module 3](https://www.raspberrypi.com/products/camera-module-3/)
    - [Waveshare 1.3inch LCD HAT](https://www.waveshare.com/wiki/1.3inch_LCD_HAT)
    - [Waveshare 1.3inch UPS HAT](https://www.waveshare.com/wiki/UPS_HAT_(C))
-   - [3D 列印相機轉接板](https://github.com/SeanLo940076/RaspberryPi-0-2W-Camera/blob/main/3D Print/camera adapter board.stl)－需要一個能將相機固定的轉接板；此專案內含簡易設計，可供列印並適配 Camera Module 3。
+   - [3D 列印相機轉接板](https://github.com/SeanLo940076/Raspberry-Pi-Zero-2-Camera/blob/main/3D%20Print/camera%20adapter%20board.stl)－需要一個能將相機固定的轉接板；此專案內含簡易設計，可供列印並適配 Camera Module 3。
    - microSD
 
 2. **作業系統**：
@@ -54,18 +54,68 @@
 
 以下以 **Raspberry Pi Lite OS** 為例，示範基礎安裝與拍攝操作：
 
-1. **更新系統並啟用 Camera**
+> 安裝過程中會遇到 × This environment is externally managed 
+   ```bash
+   sudo apt install python3-requests
+   ```
+
+1. **更新系統並啟用功能**
    ```bash
    sudo apt update
    sudo apt upgrade -y
    sudo raspi-config
    ```
-   - 在 `Interface Options` 中啟用 **Camera**
-   - 在 `Interface Options` 中啟用 **Camera**
-   
+   - 在 `Interface Options` 中啟用 **Camera**、**SPI**、**I2C**
+
+2. **更改 swap size**
+   在 /etc/dphys-swapfile 找到 CONF_SWAPSIZE，改成512
+   ```bash
+   sudo nano /etc/dphys-swapfile
+   CONF_SWAPSIZE=512
+   ```
    然後重新開機。
 
-2. **後續待更新**
+2. **安裝依賴項 LCD HAT**
+   ```bash
+   wget https://github.com/joan2937/lg/archive/master.zip
+   unzip master.zip
+   cd lg-master
+   sudo make install 
+   ```
+
+   在這裡面加入
+   ```bash
+   sudo nano /boot/firmware/config.txt
+   gpio=6,19,5,26,13,21,20,16=pu
+   ```
+
+3. **安裝依賴項 UPS HAT**
+   ```bash
+   sudo apt-get install p7zip
+   wget https://files.waveshare.com/upload/4/40/UPS_HAT_C.7z
+   7zr x UPS_HAT_C.7z -r -o./
+   cd UPS_HAT_C
+   python3 INA219.py
+   ```
+
+4. **安裝OpenCV**
+   ```bash
+   sudo apt install python3-opencv-python
+   ```
+
+5. **透過 samba 同步照片到電腦**
+   ```bash
+   sudo apt update
+   sudo apt install samba
+   sudo systemctl enable smbd
+   sudo systemctl start smbd
+   ```
+   這邊有空我再整理如何設定 samba
+
+6. **執行相機軟體**
+   ```bash
+   python3 main.py
+   ```
 
 ---
 
@@ -88,7 +138,7 @@
 **目前已有功能**
 1. **自動對焦拍攝**
 2. **相簿功能**
-3. **照片上傳功能**
+3. **同步照片到電腦**
 4. **電池電量估計**
 
 **未來預計更新**
