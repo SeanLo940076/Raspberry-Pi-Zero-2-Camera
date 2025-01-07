@@ -68,19 +68,18 @@
 
 ### Demo
 
-**成品展示 / 外觀**
-可以在這裡放上實際組裝後的照片，或是拍攝畫面的截圖，讓大家一目了然。例如：
+**成品展示 / 外觀照片**
 
 ![Demo Image](https://github.com/SeanLo940076/RaspberryPi-0-2W-Camera/blob/main/Demo/Camera1.jpg)
 ![Demo Image](https://github.com/SeanLo940076/RaspberryPi-0-2W-Camera/blob/main/Demo/Camera2.jpg)
 
-**拍攝範例**
-可在此放幾張使用 Pi Camera Module 3 拍攝的照片，展示實際成效：
-1. **白天拍攝**：戶外風景或室內光線充足的照片
-2. **室內微距拍攝**：展現 autofocus 的效果
+**拍攝範例結果**
 
-![Demo Image](https://github.com/SeanLo940076/RaspberryPi-0-2W-Camera/blob/main/Demo/Photo1.jpg)
-![Demo Image](https://github.com/SeanLo940076/RaspberryPi-0-2W-Camera/blob/main/Demo/Photo2.jpg)
+[查看原圖(1)](https://github.com/SeanLo940076/RaspberryPi-0-2W-Camera/blob/main/Demo/Photo1.jpg)
+[![Demo Image 1](https://github.com/SeanLo940076/RaspberryPi-0-2W-Camera/blob/main/Demo/Photo1_thumbnail.jpg)](https://github.com/SeanLo940076/RaspberryPi-0-2W-Camera/blob/main/Demo/Photo1.jpg)
+
+[查看原圖(2)](https://github.com/SeanLo940076/RaspberryPi-0-2W-Camera/blob/main/Demo/Photo2.jpg)
+[![Demo Image 2](https://github.com/SeanLo940076/RaspberryPi-0-2W-Camera/blob/main/Demo/Photo2_thumbnail.jpg)](https://github.com/SeanLo940076/RaspberryPi-0-2W-Camera/blob/main/Demo/Photo2.jpg)
 
 ---
 
@@ -88,13 +87,18 @@
 
 **目前已有功能**
 1. **自動對焦拍攝**
-2. **電池電量估計**
-3. **相簿功能**
-3. **圖像上傳功能**
+2. **相簿功能**
+3. **照片上傳功能**
+4. **電池電量估計**
 
 **未來預計更新**
-1. **優化網路連線方式**
-2. **錄影功能**
+
+- [ ] **縮圖生成問題**
+- [ ] **優化電池電量估計**
+- [ ] **調整功能互動模式**
+- [ ] **增加蘑菇頭模型與按鈕模型**
+- [ ] **優化網路連線方式**
+- [ ] **錄影功能**
 
 ---
 
