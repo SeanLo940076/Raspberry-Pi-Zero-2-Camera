@@ -68,12 +68,12 @@
 
 ### Demo
 
-**成品展示 / 外觀照片**
+**成品展示 / 相機外觀**
 
 ![Demo Image](https://github.com/SeanLo940076/RaspberryPi-0-2W-Camera/blob/main/Demo/Camera1.jpg)
 ![Demo Image](https://github.com/SeanLo940076/RaspberryPi-0-2W-Camera/blob/main/Demo/Camera2.jpg)
 
-**拍攝範例結果**
+**拍攝範例結果 點擊查看原圖**
 
 [![Demo Image 1](https://github.com/SeanLo940076/RaspberryPi-0-2W-Camera/blob/main/Demo/Photo1_thumbnail.jpg)](https://github.com/SeanLo940076/RaspberryPi-0-2W-Camera/blob/main/Demo/Photo1.jpg)
 [![Demo Image 2](https://github.com/SeanLo940076/RaspberryPi-0-2W-Camera/blob/main/Demo/Photo2_thumbnail.jpg)](https://github.com/SeanLo940076/RaspberryPi-0-2W-Camera/blob/main/Demo/Photo2.jpg)
@@ -104,4 +104,3 @@
 
 本專案採用 MIT License 授權。詳細內容請參考 [LICENSE](LICENSE) 檔案。
 感謝你的閱讀，祝你使用愉快，期待你的回饋與貢獻！
-```
