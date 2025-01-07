@@ -17,12 +17,12 @@
 
 ### 硬體配置
 1. **硬體**：
-   - Raspberry Pi Zero 2
-   - Raspberry Pi Camera Module 3
-   - Waveshare 1.3inch LCD HAT
-   - Waveshare 1.3inch UPS HAT
+   - ![Raspberry Pi Zero 2](https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/)
+   - ![Raspberry Pi Camera Module 3](https://www.raspberrypi.com/products/camera-module-3/)
+   - ![Waveshare 1.3inch LCD HAT](https://www.waveshare.com/wiki/1.3inch_LCD_HAT)
+   - ![Waveshare 1.3inch UPS HAT](https://www.waveshare.com/wiki/UPS_HAT_(C))
+   - ![3D 列印相機轉接板](https://github.com/SeanLo940076/RaspberryPi-0-2W-Camera/blob/main/3D Print/camera adapter board.stl)－需要一個能將相機固定的轉接板；此專案內含簡易設計，可供列印並適配 Camera Module 3。
    - microSD
-   - 3D 列印相機轉接板 － 需要一個能將相機固定的轉接板；此專案內含簡易設計，可供列印並適配 Camera Module 3。
 
 2. **作業系統**：
    - 建議 **Raspberry Pi Lite OS**
@@ -32,19 +32,19 @@
 ### 組裝步驟 (Assembly Steps)
 
 1. **疊加 LCD HAT**
-   - 先將 **Waveshare 1.3inch LCD HAT** 與 Raspberry Pi Zero 2 疊合，確保 40-pin 接腳對應正確，並在四角鎖上 M2.5 螺絲。  
+   - 先將 **Waveshare 1.3inch LCD HAT** 與 **Pi Zero 2** 疊合，確保 40-pin 接腳對應正確，並在四角鎖上 M2.5 螺絲。  
 2. **連接排線**  
-   - 使用隨附的扁平排線 (FFC Cable) 將 Raspberry Pi Zero 2 的相機介面連接。
+   - 使用隨附的扁平排線 (FFC Cable) 將 **Pi Zero 2** 的相機介面連接。
 3. **疊加 UPS HAT**  
-   - 將 **Waveshare 1.3inch UPS HAT** 與 Raspberry Pi Zero 2 疊合，確保供電接角對應正確，並在四角鎖上 M2.5 螺絲。
-   - 注意：FFC Cable 可以先穿過 UPS HAT 模組，之後會比較好連線到相機。
+   - 將 **Waveshare 1.3inch UPS HAT** 與 **Pi Zero 2** 疊合，確保供電接角對應正確，並在四角鎖上 M2.5 螺絲。
+   - 注意：**FFC Cable** 可以先穿過 **UPS HAT** 模組，之後會比較好連線到相機。
 4. **固定 Camera Module**
-   - 將 Camera Module 3 固定在 3D 相機轉接板上， 這邊使用的是 M2 螺絲。
+   - 將 **Camera Module 3** 固定在 3D 相機轉接板上， 這邊使用的是 M2 螺絲。
 5. **固定相機轉接板** 
-   - 將 **相機轉接板** 疊合至 UPS HAT 模組背後，並在四角鎖上 M2.5 螺絲。
+   - 將 **相機轉接板** 疊合至 **UPS HAT** 模組背後，並在四角鎖上 M2.5 螺絲。
 5. **電源測試**  
-   - 接上電池到 UPS HAT 充電。  
-   - 確認 Pi Zero 2 能正常啟動並且螢幕有顯示畫面。
+   - 接上電池到 **UPS HAT** 充電。  
+   - 確認 **Pi Zero 2** 能正常啟動並且螢幕有顯示畫面。
 
 > **提示**：由於此設計仍在持續改良中，若遇到尺寸不合或孔位不相符，可以自行微調 3D 模型。
 
@@ -60,7 +60,10 @@
    sudo apt upgrade -y
    sudo raspi-config
    ```
-   - 在 `Interface Options` 中啟用 **Camera**，然後重新開機。
+   - 在 `Interface Options` 中啟用 **Camera**
+   - 在 `Interface Options` 中啟用 **Camera**
+   
+   然後重新開機。
 
 2. **後續待更新**
 
