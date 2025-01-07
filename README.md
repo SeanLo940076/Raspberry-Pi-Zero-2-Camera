@@ -11,8 +11,8 @@
 
 - **超小體積**：以 Raspberry Pi Zero 2 為核心，方便攜帶與應用。
 - **自動對焦**：採用 Raspberry Pi Camera Module 3，支援 AutoFocus 功能，可取得更清晰的影像。
-- **顯示與供電整合**：支援 Waveshare 1.3inch LCD HAT 與 Waveshare 1.3inch UPS HAT，實現完整拍攝體驗。
-- **可客製化、擴充彈性**：Raspberry Pi 可搭配多種 Camera 模組，並擁有龐大的開源社區，有許多替換或升級零組件與 3D 列印設計可搭配使用。
+- **顯示與供電整合**：採用 Waveshare 1.3inch LCD HAT 與 Waveshare 1.3inch UPS HAT，實現完整拍攝體驗。
+- **可客製化、擴充彈性**：Raspberry Pi 可搭配多種 Camera 模組，並擁有龐大的開源社區，有許多可替換零組件與 3D 列印設計使用。
 ---
 
 ### Demo
