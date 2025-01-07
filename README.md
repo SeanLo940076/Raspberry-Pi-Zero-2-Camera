@@ -17,11 +17,11 @@
 
 ### 硬體配置
 1. **硬體**：
-   - ![Raspberry Pi Zero 2](https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/)
-   - ![Raspberry Pi Camera Module 3](https://www.raspberrypi.com/products/camera-module-3/)
-   - ![Waveshare 1.3inch LCD HAT](https://www.waveshare.com/wiki/1.3inch_LCD_HAT)
-   - ![Waveshare 1.3inch UPS HAT](https://www.waveshare.com/wiki/UPS_HAT_(C))
-   - ![3D 列印相機轉接板](https://github.com/SeanLo940076/RaspberryPi-0-2W-Camera/blob/main/3D Print/camera adapter board.stl)－需要一個能將相機固定的轉接板；此專案內含簡易設計，可供列印並適配 Camera Module 3。
+   - [Raspberry Pi Zero 2](https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/)
+   - [Raspberry Pi Camera Module 3](https://www.raspberrypi.com/products/camera-module-3/)
+   - [Waveshare 1.3inch LCD HAT](https://www.waveshare.com/wiki/1.3inch_LCD_HAT)
+   - [Waveshare 1.3inch UPS HAT](https://www.waveshare.com/wiki/UPS_HAT_(C))
+   - [3D 列印相機轉接板](https://github.com/SeanLo940076/RaspberryPi-0-2W-Camera/blob/main/3D Print/camera adapter board.stl)－需要一個能將相機固定的轉接板；此專案內含簡易設計，可供列印並適配 Camera Module 3。
    - microSD
 
 2. **作業系統**：
