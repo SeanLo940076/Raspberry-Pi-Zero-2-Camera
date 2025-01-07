@@ -15,6 +15,20 @@
 - **可客製化、擴充彈性**：Raspberry Pi 可搭配多種 Camera 模組，並擁有龐大的開源社區，有許多替換或升級零組件與 3D 列印設計可搭配使用。
 ---
 
+### Demo
+
+**成品展示 / 相機外觀**
+
+![Demo Image](https://github.com/SeanLo940076/RaspberryPi-0-2W-Camera/blob/main/Demo/Camera1.jpg)
+![Demo Image](https://github.com/SeanLo940076/RaspberryPi-0-2W-Camera/blob/main/Demo/Camera2.jpg)
+
+**拍攝範例結果 點擊查看原圖**
+
+[![Demo Image 1](https://github.com/SeanLo940076/RaspberryPi-0-2W-Camera/blob/main/Demo/Photo1_thumbnail.jpg)](https://github.com/SeanLo940076/RaspberryPi-0-2W-Camera/blob/main/Demo/Photo1.jpg)
+[![Demo Image 2](https://github.com/SeanLo940076/RaspberryPi-0-2W-Camera/blob/main/Demo/Photo2_thumbnail.jpg)](https://github.com/SeanLo940076/RaspberryPi-0-2W-Camera/blob/main/Demo/Photo2.jpg)
+
+---
+
 ### 硬體配置
 1. **硬體**：
    - [Raspberry Pi Zero 2](https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/)
@@ -116,20 +130,6 @@
    ```bash
    python3 main.py
    ```
-
----
-
-### Demo
-
-**成品展示 / 相機外觀**
-
-![Demo Image](https://github.com/SeanLo940076/RaspberryPi-0-2W-Camera/blob/main/Demo/Camera1.jpg)
-![Demo Image](https://github.com/SeanLo940076/RaspberryPi-0-2W-Camera/blob/main/Demo/Camera2.jpg)
-
-**拍攝範例結果 點擊查看原圖**
-
-[![Demo Image 1](https://github.com/SeanLo940076/RaspberryPi-0-2W-Camera/blob/main/Demo/Photo1_thumbnail.jpg)](https://github.com/SeanLo940076/RaspberryPi-0-2W-Camera/blob/main/Demo/Photo1.jpg)
-[![Demo Image 2](https://github.com/SeanLo940076/RaspberryPi-0-2W-Camera/blob/main/Demo/Photo2_thumbnail.jpg)](https://github.com/SeanLo940076/RaspberryPi-0-2W-Camera/blob/main/Demo/Photo2.jpg)
 
 ---
 
