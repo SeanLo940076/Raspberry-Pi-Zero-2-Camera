@@ -39,9 +39,7 @@ class CameraManager:
             logging.error(f"Failed to initialize camera: {e}")
             return False
 
-    def capture_high_res_image_to_memory(self):
-        time.sleep(0.2)  # 幫助手穩定
-
+    def capture_high_res_image_to_memory(self, max_focus_time=3):
         logging.info("開始高分辨率拍攝...")
         try:
             self.picam2.switch_mode(self.capture_config)
@@ -56,7 +54,24 @@ class CameraManager:
             logging.info("已啟用自動對焦與自動曝光")
 
             self.display_mgr.disp.ShowImage_CV(self.black_image)
-            time.sleep(0.65)  # 等待對焦與曝光
+
+            # 等待對焦與曝光完成，並設置最大等待時間
+            logging.info("等待對焦與曝光完成...")
+            start_time = time.time()
+            focus_done = False
+
+            while not focus_done:
+                elapsed_time = time.time() - start_time
+                if elapsed_time > max_focus_time:
+                    logging.warning("對焦超時，直接拍攝。")
+                    break
+
+                metadata = self.picam2.capture_metadata()
+                focus_done = metadata.get("AfState", None) == controls.AfStateEnum.Focused
+                time.sleep(0.1)  # 減少輪詢的頻率
+
+            focus_duration = time.time() - start_time
+            logging.info(f"對焦完成或超時，對焦花費時間: {focus_duration:.2f} 秒。")
         except Exception as e:
             logging.error(f"設置自動對焦和曝光失敗: {str(e)}")
             return None

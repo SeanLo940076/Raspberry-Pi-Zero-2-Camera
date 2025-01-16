@@ -43,7 +43,7 @@ class StateMachine:
         if self.key_mgr.check_key_pressed(self.display_mgr.disp.GPIO_KEY1_PIN):
             self.state = State.CAPTURE
 
-        elif self.key_mgr.check_key_pressed(self.display_mgr.disp.GPIO_KEY3_PIN):
+        elif self.key_mgr.check_key_pressed(self.display_mgr.disp.GPIO_KEY_LEFT_PIN):
             self.state = State.VIEW_IMAGE
             self.image_index = len(self.thumbnail_mgr.image_paths) - 1
 
@@ -103,7 +103,7 @@ class StateMachine:
                 if self.image_index < len(self.thumbnail_mgr.image_paths) - 1:
                     self.image_index += 1
 
-            if self.key_mgr.check_key_pressed(self.display_mgr.disp.GPIO_KEY2_PIN):
+            if self.key_mgr.check_key_pressed(self.display_mgr.disp.GPIO_KEY_UP_PIN):
                 self.state = State.PREVIEW
 
     def run(self):

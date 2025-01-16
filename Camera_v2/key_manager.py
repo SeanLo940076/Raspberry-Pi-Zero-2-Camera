@@ -15,6 +15,8 @@ class KeyManager:
             disp.GPIO_KEY3_PIN: 0,
             disp.GPIO_KEY_LEFT_PIN: 0,
             disp.GPIO_KEY_RIGHT_PIN: 0,
+            disp.GPIO_KEY_UP_PIN: 0,
+            disp.GPIO_KEY_DOWN_PIN: 0,
         }
 
     def check_key_pressed(self, key_pin, debounce_delay=0.15):
