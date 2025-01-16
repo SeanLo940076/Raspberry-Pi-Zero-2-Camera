@@ -5,6 +5,7 @@ import numpy as np
 import logging
 from ST7789 import ST7789
 import INA219
+import time
 
 class DisplayManager:
     def __init__(self):
@@ -23,6 +24,11 @@ class DisplayManager:
         self.last_battery_percentage = None  # 上次的電量百分比
         self.cached_date_layer = None  # 快取日期文字層
         self.last_date_text = None  # 上次的日期文字
+
+        # 用於計算 FPS 的變量
+        self.last_frame_time = time.time()
+        self.frame_count = 0
+        self.fps = 0
 
     def display_image_with_state(self, image, state_text, date_text=None, time_text=None, battery_percentage=None):
         """
@@ -78,6 +84,18 @@ class DisplayManager:
                 x_start = target_width - self.cached_battery_image.shape[1] - 10  # 向左移動 10 pixels
                 y_start = target_height - self.cached_battery_image.shape[0] - 5  # 向上移動 10 pixels
                 processed_image[y_start:y_start + self.cached_battery_image.shape[0], x_start:x_start + self.cached_battery_image.shape[1]] = self.cached_battery_image
+
+            # 計算 FPS
+            self.frame_count += 1
+            current_time = time.time()
+            elapsed_time = current_time - self.last_frame_time
+            if elapsed_time >= 1.0:  # 每秒更新一次 FPS
+                self.fps = self.frame_count / elapsed_time
+                self.frame_count = 0
+                self.last_frame_time = current_time
+
+            # 在左下角顯示 FPS
+            self._draw_text(processed_image, f"FPS: {self.fps:.2f}", (10, target_height - 30), cv2.FONT_HERSHEY_COMPLEX, (0, 255, 0), 1, align="left")
 
             # 顯示處理後的圖片
             self.disp.ShowImage_CV(processed_image)
