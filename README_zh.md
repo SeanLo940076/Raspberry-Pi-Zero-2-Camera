@@ -139,9 +139,19 @@
    在 exit 0 之前添加這一行，結果如下
    > 請更換使用者名稱
    ```bash
-   fi
+
    /usr/bin/python3 /home/User/Raspberry-Pi-Zero-2-Camera/Camera_v2/main.py &
    exit 0
+   ```
+
+   重新啟動 rc.local 服務
+   ```bash
+   sudo systemctl restart rc-local
+   ```
+
+   檢查服務狀態
+   ```bash
+   sudo systemctl status rc-local
    ```
 
 8. **相機按鍵介紹**
