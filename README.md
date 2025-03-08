@@ -144,11 +144,16 @@ Below is an example based on **Raspberry Pi Lite OS**, demonstrating basic insta
    ```bash
    sudo nano /etc/rc.local
    ```
+
+   > Switch to the specified user so that the script runs in the user's environment.
+   > When running as root, the working directory and environment variables are different (e.g., the default path might be /root),
+   > which can cause the script to fail in locating resources like the photo storage directory.
+   
    Add the following line before `exit 0`, resulting in:
    > Replace “User” with your actual username
    ```bash
-   fi
-   /usr/bin/python3 /home/User/Raspberry-Pi-Zero-2-Camera/Camera_v2/main.py &
+
+   su - User -c "/usr/bin/python3 /User/SeanPi-2w/Raspberry-Pi-Zero-2-Camera/Camera_v2/main.py &"
    exit 0
    ```
 
