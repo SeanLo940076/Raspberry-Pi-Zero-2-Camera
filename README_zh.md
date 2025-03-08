@@ -135,12 +135,14 @@
    ```bash
    sudo nano /etc/rc.local
    ```
+   > 開機自啟動的部分需要先切換使用者，以確保照片儲存的路徑是正確的
+   > 當使用 root 權限時，可能會導致環境的不同，例如照片的儲存位置
 
    在 exit 0 之前添加這一行，結果如下
    > 請更換使用者名稱
    ```bash
 
-   /usr/bin/python3 /home/User/Raspberry-Pi-Zero-2-Camera/Camera_v2/main.py &
+   su - User -c "/usr/bin/python3 /User/SeanPi-2w/Raspberry-Pi-Zero-2-Camera/Camera_v2/main.py &"
    exit 0
    ```
 
